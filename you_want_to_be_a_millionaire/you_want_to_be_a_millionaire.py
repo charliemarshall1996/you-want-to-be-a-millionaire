@@ -28,7 +28,9 @@ LVL3 = [{'question': "The principle of 'Pareto Efficiency' is most closely assoc
             'b': 'John Keats', 'c': 'John Milton', 'd': 'Geoffrey Chaucer', 'answer': 'c'},
         {'question': "Which element has the highest melting point of all metallic elements?",
             'a': 'Iron', 'b': 'Tungsten', 'c': 'Platinum', 'd': 'Uranium', 'answer': 'b'},
-        {'question': "What is the term for a word that is similar in meaning to another word?", 'a': 'Antonym', 'b': 'Synonym', 'c': 'Homonym', 'd': 'Hyponym', 'answer': 'b'}]
+        {'question': "What is the term for a word that is similar in meaning to another word?",
+            'a': 'Antonym', 'b': 'Synonym', 'c': 'Homonym', 'd': 'Hyponym', 'answer': 'b'},
+        {'question': 'The Battle of Hastings in 1066 was fought in which country?', 'a': 'England', 'b': 'Scotland', 'c': 'France', 'd': 'Ireland', 'answer': 'a'}]
 
 MONEY = {
     0: 100,
@@ -48,6 +50,150 @@ MONEY = {
     500000: 1000000
 }
 
+LOSING_FACE = """
+⡴⠒⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠉⠳⡆⠀
+⣇⠰⠉⢙⡄⠀⠀⣴⠖⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣆⠁⠙⡆
+⠘⡇⢠⠞⠉⠙⣾⠃⢀⡼⠀⠀⠀⠀⠀⠀⠀⢀⣼⡀⠄⢷⣄⣀⠀⠀⠀⠀⠀⠀⠀⠰⠒⠲⡄⠀⣏⣆⣀⡍
+⠀⢠⡏⠀⡤⠒⠃⠀⡜⠀⠀⠀⠀⠀⢀⣴⠾⠛⡁⠀⠀⢀⣈⡉⠙⠳⣤⡀⠀⠀⠀⠘⣆⠀⣇⡼⢋⠀⠀⢱
+⠀⠘⣇⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⡴⢋⡣⠊⡩⠋⠀⠀⠀⠣⡉⠲⣄⠀⠙⢆⠀⠀⠀⣸⠀⢉⠀⢀⠿⠀⢸
+⠀⠀⠸⡄⠀⠈⢳⣄⡇⠀⠀⢀⡞⠀⠈⠀⢀⣴⣾⣿⣿⣿⣿⣦⡀⠀⠀⠀⠈⢧⠀⠀⢳⣰⠁⠀⠀⠀⣠⠃
+⠀⠀⠀⠘⢄⣀⣸⠃⠀⠀⠀⡸⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠈⣇⠀⠀⠙⢄⣀⠤⠚⠁⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⢘⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⢰⣿⣿⣿⡿⠛⠁⠀⠉⠛⢿⣿⣿⣿⣧⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡀⣸⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⡀⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇⠹⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⡿⠁⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣤⣞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢢⣀⣠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠲⢤⣀⣀⠀⢀⣀⣀⠤⠒⠉⠀⠀⠀⠀⠀⠀
+"""
+
+WINNING_FACE = """
+                     $$$$$$$$$$$$$$$$$$$$$$
+                  $$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                $$$$$$$$$$$$$$$$$$$$$$$$$$$ $$$$$
+               $$$$$$$$$$$$$$  $$$$$$$  $$   $ $$$$
+             $$$$$$$$$$$   $$   $$$  $$  $   $  $$$$
+            $$$$%$$$  $ $   $$   $$$  $  $   $$ $ $$
+           $$$$%%$$$   $ $   $$   $$$  $  $$  $ $ $$$
+          $$$$$%%$$$$  $ $    $    $$  $  $$$ $ $$ $$$$
+         $$$$$%%%$$$$$ $$$$   $  $ $$   $ $$$$$ $$ $$$$$
+        $$$$$$%%%$$$$$$$$$$$  $$ $ $$$$ $ $$$$$$$$$$$$$$$$
+       $$$$$$%%%$$$$$$$$$$$$$$$ $$$$$$ $$$$$$$$$$$$$$$$$$$
+      $$$$$$%%%$$%%%%%%$$$$$$$$$$$$$$$ $$$$$$$$$   $$$$$$$$
+      $$$$$$%%$$%%%%%%%%%$$$$$$$$$$$$$ $$$$$$$     $$$$%$$$
+      $$$$$$%$$%%%%%%%%%%%$$$$$$$$$$$$$$$$$        $$$$%%$$$
+      $$$$$$$$%%%%%%%%%%%%%$$$$$$$$$$$             $$$$%%$$$
+     $$$$$$$%%%            $$$$$$$$                 $$$%%$$$
+     $$$$$$%%%                                      $$$%%$$
+     $$$$$$%%%                                      $$$%%$$
+     $$$$$%%%%                                    % $$$%%$$
+     $$$$$%%%%                                    %  $$%%$$
+     $$$$$%%%%                                    %  $$%%$$
+     $$$$$%%%%                                   %%  $$$%$$
+     $$$$$%%%%                                  %%%  $$$%$$
+     $$$$$%%%%                                   %%  $$$%$$
+     $$$$$%%%%                                   %%  $$$%$$
+     $$$$$%%%%                                   %%  $$$%$$
+      $$$$%%%%                             $$$$  %% $$$$%$$
+     $ $$$%%%% $$$$$$$$$                $$$$$$$$$%% $$$$$$$
+    $$$ $$%%%  $$$$$$$$$$              $$$$$$$$$$$%% $$$$$$
+    $$$$  %%%          $$$           $$$$       $$%% $$$$$$
+    $$$$$$%%%    $$$$$ $$$$         $$$$$$$$$$   $%% $$$$$$
+     $$$$ %%%  $$$     $$$$$       $$$$$$    $$$  %%% $$$$$
+     $$$$     $$$$$$$$$ $$$$      $$$$$$$$$$$$$$   %  $$$$$
+     $$$$     $$$  $ $$  $$$$    $$$$$$  $ $  $$      $$$$
+     $$$$      $   $$$ %%%$$$         %% $$$          $$$$
+     $$$$             %%%% $$         %%%%%%  %%%     $$$$
+      $$$$      %%% %%%%%   $           %%%%%%%       $$$$
+      $$$$        %%%%%    $$             %%%         $$ $
+      $$ $          %%     $                          $ $$
+      $ $$                 $                          $  $
+      $ $$  $             %$                         $$  $
+      $  $  $            %%$                          $$$$
+       $$$  $$         $ %%%                       $ $ $$
+        $$  $$        $ %%%%          $ $$$       $$ $
+         $ $$$     $$  %%%%        $$$  $$$     $$$ $
+         $ $$$    $$  %%%$$$     $$$$    $$$$  $$$$ $
+         $$$$$$$$$$   $$$$$$$$$$$$$$      $$$$$$$$$ $
+          $$$$$$$   $$$$$$$$$$$$$$         $$$$$$$$ $
+          $$$$$$ %%$$$$$$$$$$$$$$      $$$$$$$$$$$$$$
+          $$$ $$  %$$$$$$$$$$      $$$$$$$$$    $$$$
+           $$  $   $$$$     $$$$$$$$    $$      $$$
+           $$  $   %$$$$               $$      $$$$
+            $  $   %%%%$$$ $$$$$$$$$$$$$       $$$
+            $$ $$   %%%%             $$       $$$$
+            $$ $$    %%$$$$ $$$$$$$$$$        $$$
+             $  $    $$$$$%%%%%%%%%%         $$$$
+             $$ $$  $$$$$%%%                 $$$
+              $  $ $$$$ %%%%%%%%%%%%%%      $$$
+              $$  $$$$  %%%%%%%%%%%%%       $$$
+     $$$       $ $$$$   $%%%%              $$$
+   $$   $$      $$$$$  $$$$               $$$
+  $  $$  $$   $$$$$$   $$$                $$$
+ $ $$$$  $$  $$$$$$   $$$$               $$$
+$  $$$  $$$ $$$$$$ $$$$$$$              $$$
+$      $$$$$$$$$$   $$$$$$             $$$
+$  $$   $$$$$$$$     $$$$$$$$$$$$$$$  $$$
+$$$$$   $$$$$$$       $$$$$$$$$$$$$$$$$$
+$$$$$$   $$$$$                  $$$$$$
+ $$$$$   $$$$
+ $$$$$$  $$$
+  $$$$$  $$$
+   $$$$$$$$
+    $$$$$$
+
+"""
+
+DOLLAR_SIGN = """
+              ⠀⠀⠀⠀⣀⣼⣿⣿⣧⣀⠀⠀⠀⠀
+            ⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣦⣰⠀
+            ⠠⣿⣿⣿⠟⢿⣿⣿⣿⢻⣿⣿⣷⡀
+            ⢀⣿⣿⣿⣄⣸⣿⣿⡇⠐⢿⣿⣿⠃
+            ⠀⢻⣿⣿⣿⣿⣿⣿⣯⣤⣀⠀⠈⠀
+            ⠀⠀⠋⢻⠿⣿⣿⣿⣿⣿⣿⣿⣍⠀
+            ⠀⠀⢤⠀⠀⢺⣿⣿⡿⠿⣿⣿⣿⣧
+            ⣿⣿⣿⣧⠀⢸⣿⣿⡇⠀⢟⣿⣿⣿
+            ⠸⣿⣿⣿⣧⣽⣿⣿⣷⣠⣿⣿⣿⡏
+            ⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠀
+            ⠀⠀⠀⠘⠉⢻⣿⣿⡟⠙⠉⠁
+                    """
+
+CROWN = '''
+                                    o
+                                   $""$o
+                                  $"  $$
+                                   $$$$
+                                   o "$o
+                                  o"  "$
+             oo"$$$"  oo$"$ooo   o$    "$    ooo"$oo  $$$"o
+o o o o    oo"  o"      "o    $$o$"     o o$""  o$      "$  "oo   o o o o
+"$o   ""$$$"   $$         $      "   o   ""    o"         $   "o$$"    o$$
+  ""o       o  $          $"       $$$$$       o          $  ooo     o""
+     "o   $$$$o $o       o$        $$$$$"       $o        " $$$$   o"
+      ""o $$$$o  oo o  o$"         $$$$$"        "o o o o"  "$$$  $
+        "" "$"     """""            ""$"            """      """ "
+         "oooooooooooooooooooooooooooooooooooooooooooooooooooooo$
+          "$$$$"$$$$" $$$$$$$"$$$$$$ " "$$$$$"$$$$$$"  $$$""$$$$
+           $$$oo$$$$   $$$$$$o$$$$$$o" $$$$$$$$$$$$$$ o$$$$o$$$"
+           $"""""""""""""""""""""""""""""""""""""""""""""""""""$
+           $"                                                 "$
+           $"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$"$
+'''
+
+WIN_MESSAGE = """
+┌────────────────────────────────────────────────────────────┐
+│ _ _  ___  _ _  _ ___  ___   ___                            │
+│| | || . || | ||/| . \| __> | . |                           │
+│\   /| | || ' |  |   /| _>  |   |                           │
+│ |_| `___'`___'  |_\_\|___> |_|_|                           │
+│                                                            │
+│ __ __  _  _    _    _  ___  _ _  ___  _  ___  ___  _  _  _ │
+│|  \  \| || |  | |  | || . || \ || . || || . \| __>| || || |│
+│|     || || |_ | |_ | || | ||   ||   || ||   /| _> |_/|_/|_/│
+│|_|_|_||_||___||___||_|`___'|_\_||_|_||_||_\_\|___><_><_><_>│
+└────────────────────────────────────────────────────────────┘
+"""
+
 
 class YouWantToBeAMillionaire:
 
@@ -62,19 +208,7 @@ class YouWantToBeAMillionaire:
 
     def run(self):
         print("Let's play You Want to be a Millionaire!!")
-        print("""
-              ⠀⠀⠀⠀⣀⣼⣿⣿⣧⣀⠀⠀⠀⠀
-            ⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣦⣰⠀
-            ⠠⣿⣿⣿⠟⢿⣿⣿⣿⢻⣿⣿⣷⡀
-            ⢀⣿⣿⣿⣄⣸⣿⣿⡇⠐⢿⣿⣿⠃
-            ⠀⢻⣿⣿⣿⣿⣿⣿⣯⣤⣀⠀⠈⠀
-            ⠀⠀⠋⢻⠿⣿⣿⣿⣿⣿⣿⣿⣍⠀
-            ⠀⠀⢤⠀⠀⢺⣿⣿⡿⠿⣿⣿⣿⣧
-            ⣿⣿⣿⣧⠀⢸⣿⣿⡇⠀⢟⣿⣿⣿
-            ⠸⣿⣿⣿⣧⣽⣿⣿⣷⣠⣿⣿⣿⡏
-            ⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠀
-            ⠀⠀⠀⠘⠉⢻⣿⣿⡟⠙⠉⠁
-                    """)
+        print(DOLLAR_SIGN)
         play = input("Would you like to play? (y/n): ")
         if play.lower() == 'y':
             self._play()
@@ -83,54 +217,77 @@ class YouWantToBeAMillionaire:
 
     def _play(self):
 
+        # While the accumulated money
+        # is less than 1 million
         while self.hand < 1000000:
+
+            # Ask a question
             q = self._q()
-            if self._a(q):
-                self.q_num += 1
+
+            # Check if the answer is correct
+            if self._a(q):  # If Correct answer
+                self.q_num += 1  # Increment the question number
+
+                # Bank money at $1000
+                # and $64000
                 if self.hand == 1000:
                     self.bank = 1000
                 if self.hand == 64000:
                     self.bank = 64000
 
+                # Increase the money
                 self._increase_money()
+
+                # Print the correct message
                 print(f"Correct! You have {self.hand}")
-            else:
+                print(WINNING_FACE)
+
+            else:  # If Wrong answer
+                # Print the lose message
                 print("Wrong answer. You lose.")
+
+                # Print the amount in the bank
                 print(f"You took home ${self.bank}")
-                print(""" 
-                    ⡴⠒⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠉⠳⡆⠀
-                    ⣇⠰⠉⢙⡄⠀⠀⣴⠖⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣆⠁⠙⡆
-                    ⠘⡇⢠⠞⠉⠙⣾⠃⢀⡼⠀⠀⠀⠀⠀⠀⠀⢀⣼⡀⠄⢷⣄⣀⠀⠀⠀⠀⠀⠀⠀⠰⠒⠲⡄⠀⣏⣆⣀⡍
-                    ⠀⢠⡏⠀⡤⠒⠃⠀⡜⠀⠀⠀⠀⠀⢀⣴⠾⠛⡁⠀⠀⢀⣈⡉⠙⠳⣤⡀⠀⠀⠀⠘⣆⠀⣇⡼⢋⠀⠀⢱
-                    ⠀⠘⣇⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⡴⢋⡣⠊⡩⠋⠀⠀⠀⠣⡉⠲⣄⠀⠙⢆⠀⠀⠀⣸⠀⢉⠀⢀⠿⠀⢸
-                    ⠀⠀⠸⡄⠀⠈⢳⣄⡇⠀⠀⢀⡞⠀⠈⠀⢀⣴⣾⣿⣿⣿⣿⣦⡀⠀⠀⠀⠈⢧⠀⠀⢳⣰⠁⠀⠀⠀⣠⠃
-                    ⠀⠀⠀⠘⢄⣀⣸⠃⠀⠀⠀⡸⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠈⣇⠀⠀⠙⢄⣀⠤⠚⠁⠀
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⢘⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⢰⣿⣿⣿⡿⠛⠁⠀⠉⠛⢿⣿⣿⣿⣧⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡀⣸⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⡀⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇⠹⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⡿⠁⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣤⣞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢢⣀⣠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠲⢤⣀⣀⠀⢀⣀⣀⠤⠒⠉⠀⠀⠀⠀⠀⠀
-                    """)
+
+                # Print the losing face
+                print(LOSING_FACE)
+
+                # Reinitialize the game
                 self.__init__()
                 break
+        if self.hand == 1000000:
+            print("You have won the million dollars!!!")
+            time.sleep(0.5)
+            print("***CONGRATULATIONS****")
+            time.sleep(0.5)
+            print(CROWN)
+            time.sleep(0.5)
+            print(WIN_MESSAGE)
 
+        # Run game menu
         self.run()
 
     def _a(self, q):
-        answer = input("Answer: ").lower()
-        if answer not in ['a', 'b', 'c', 'd']:
-            print("Please enter a valid answer.")
-            return self._a(q)
 
-        if answer == q['answer']:
-            return True
-        else:
-            return False
+        # Retrieve user answer
+        answer = input("Answer: ").lower()
+
+        # Check if answer is valid
+        if answer not in ['a', 'b', 'c', 'd']:  # If answer is not valid
+            print("Please enter a valid answer.")  # Print error message
+            return self._a(q)  # Ask question again
+
+        # Check if answer is correct
+        if answer == q['answer']:  # If answer is correct
+            return True  # Return True
+
+        else:  # If answer is wrong
+            return False  # Return False
 
     def _q(self):
-        print(f"Question {self.q_num}:")
+        print(f"Question {self.q_num}.")
+        print(f"For ${MONEY[self.hand]}:")
+
         time.sleep(0.2)
 
         if self.q_num <= 5:
@@ -141,11 +298,15 @@ class YouWantToBeAMillionaire:
             q = self.LVL3.pop(self.LVL3.index(random.choice(LVL3)))
 
         print(q['question'])
-        time.sleep(0.2)
+        time.sleep(0.5)
         print(f"a: {q['a']}")
+        time.sleep(0.5)
         print(f"b: {q['b']}")
+        time.sleep(0.5)
         print(f"c: {q['c']}")
+        time.sleep(0.5)
         print(f"d: {q['d']}")
+        time.sleep(0.5)
         return q
 
     def _increase_money(self):
